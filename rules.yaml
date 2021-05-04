@@ -1,0 +1,5 @@
+groups:
+  - name: custom_rules
+    rules:
+      - record: memory_usage_by_pods
+        expr: sum by (pod) (container_memory_working_set_bytes)
