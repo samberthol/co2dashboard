@@ -1,11 +1,11 @@
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
- name: example
+ name: example1
  namespace: test
 spec:
  groups:
  - name: custom_rules
    rules:
-   - expr: sum by (pod) (container_memory_working_set_bytes)
-     record: memory_usage_by_pods
+   - expr: sum by (pod) (pod:container_cpu_usage:sum)
+     record: cpu_usage_by_pods
